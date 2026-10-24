@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carlos Canales | Electrical & Computer Engineering, UTA</title>
+  <meta name="description" content="Carlos Canales is an Electrical & Computer Engineering student at The University of Texas at Arlington. Links to his LinkedIn, Handshake and resume.">
+  <meta property="og:title" content="Carlos Canales | ECE @ UT Arlington">
+  <meta property="og:description" content="Electrical & Computer Engineering sophomore at UTA, SHPE member. Resume, LinkedIn and Handshake.">
+  <meta name="theme-color" content="#0b2545">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b2545'/><text x='50' y='66' font-size='50' text-anchor='middle' fill='%23f58025' font-family='Arial' font-weight='700'>CC</text></svg>">
+  <style>
+    :root {
+      --navy: #0b2545;
+      --navy-2: #13315c;
+      --orange: #f58025;
+      --bg: #f4f6fa;
+      --card: #ffffff;
+      --text: #1b2433;
+      --muted: #5a6577;
+      --line: #e3e8ef;
+      --chip: #eef2f8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a1424;
+        --card: #111e33;
+        --text: #e8edf5;
+        --muted: #a3afc2;
+        --line: #22324d;
+        --chip: #1a2a45;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+    header {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: #fff;
+      padding: 40px 16px 64px;
+      text-align: center;
+    }
+    .avatar {
+      width: 84px; height: 84px; border-radius: 50%;
+      margin: 0 auto 16px;
+      display: grid; place-items: center;
+      background: var(--orange); color: var(--navy);
+      font-weight: 800; font-size: 32px; letter-spacing: 1px;
+      border: 3px solid rgba(255,255,255,.85);
+    }
+    h1 { margin: 0; font-size: clamp(28px, 7vw, 40px); line-height: 1.15; }
+    .tagline { margin: 8px 0 0; font-size: 17px; color: #d6e0ef; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+    .badge {
+      font-size: 13px; padding: 4px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+    }
+    .badge.shpe { background: var(--orange); border-color: var(--orange); color: var(--navy); font-weight: 700; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+      box-shadow: 0 1px 3px rgba(11,37,69,.06);
+    }
+    .intro { margin-top: -40px; position: relative; }
+    .intro p { margin: 0 0 16px; font-size: 17px; }
+
+    .links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 52px; padding: 12px; border-radius: 12px;
+      font-weight: 700; font-size: 16px; text-decoration: none;
+      border: 2px solid transparent;
+      transition: transform .1s ease, filter .15s ease;
+    }
+    .btn:active { transform: scale(.98); }
+    .btn:hover { filter: brightness(1.08); }
+    .btn svg { width: 20px; height: 20px; flex: none; }
+    .btn.resume { grid-column: 1 / -1; background: var(--orange); color: var(--navy); }
+    .btn.linkedin { background: #0a66c2; color: #fff; }
+    .btn.handshake { background: #d3fb52; color: #0b1a0f; }
+    .btn.email { grid-column: 1 / -1; background: transparent; color: var(--text); border-color: var(--line); }
+    .resume-dl { display: block; text-align: center; margin-top: 10px; font-size: 14px; color: var(--muted); }
+
+    h2 {
+      font-size: 13px; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--orange); margin: 0 0 12px;
+    }
+    .project + .project, .job + .job { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; }
+    .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; align-items: baseline; }
+    h3 { margin: 0; font-size: 17px; }
+    .when { font-size: 14px; color: var(--muted); }
+    .tools { font-size: 14px; color: var(--muted); margin: 2px 0 6px; }
+    .project p, .job p { margin: 6px 0 0; font-size: 15px; }
+
+    .skill-group + .skill-group { margin-top: 14px; }
+    .skill-group h4 { margin: 0 0 8px; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { background: var(--chip); border-radius: 8px; padding: 5px 10px; font-size: 14px; }
+
+    footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="avatar" aria-hidden="true">CC</div>
+    <h1>Carlos Canales</h1>
+    <p class="tagline">Electrical &amp; Computer Engineering<br>The University of Texas at Arlington</p>
+    <div class="badges">
+      <span class="badge">Sophomore</span>
+      <span class="badge">Graduating Dec 2028</span>
+      <span class="badge">Dallas, TX</span>
+      <span class="badge shpe">SHPE Member</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card intro">
+      <p>Nice to meet you! My name is Carlos Canales. I'm currently studying Electrical and Computer Engineering at The University of Texas at Arlington, and I have 3 projects I would love to talk to you about!</p>
+      <p>Please feel free to reach out on any of my socials.</p>
+
+      <div class="links">
+        <a class="btn resume" href="assets/Carlos_Canales_Resume.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          View My Resume
+        </a>
+        <a class="btn linkedin" href="https://www.linkedin.com/in/carlosrcanales" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn handshake" href="https://app.joinhandshake.com/profiles/carlos_canales" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></svg>
+          Handshake
+        </a>
+        <a class="btn email" href="mailto:clscarlos0414@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          clscarlos0414@gmail.com
+        </a>
+      </div>
+      <a class="resume-dl" href="assets/Carlos_Canales_Resume.pdf" download>Download resume (PDF)</a>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <article class="project">
+        <div class="row"><h3>USB-C to 3.3 V Regulator Board</h3><span class="when">Oct 2026</span></div>
+        <div class="tools">KiCad 10 · 2-layer PCB · 25 × 20 mm</div>
+        <p>A USB-C power board that turns 5 V into a regulated 3.3 V output. I chose the regulator from a worst-case heat calculation, sized the capacitors from datasheet requirements, and used thermal vias, ground pours and wider power traces. The design passes design-rule and schematic-match checks.</p>
+      </article>
+      <article class="project">
+        <div class="row"><h3>555 Timer LED Blinker PCB</h3><span class="when">Sep – Oct 2026</span></div>
+        <div class="tools">KiCad 10 · Self-directed · 2-layer PCB · 40 × 30 mm</div>
+        <p>A battery-powered NE555 oscillator that I took from circuit calculations and schematic capture through placement, routing and design-rule verification. I placed the decoupling capacitors to minimize loop inductance and added a solid ground pour for low-impedance return paths.</p>
+      </article>
+      <article class="project">
+        <div class="row"><h3>Product Database</h3><span class="when">Jun – Aug 2024</span></div>
+        <div class="tools">Microsoft Azure · PostgreSQL · Access · Fabric</div>
+        <p>A full inventory database of more than 90,000 items, covering prices, per-store inventory and product metadata. I mirrored it across cloud and local systems so coworkers could query and work with the data in real time.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Experience</h2>
+      <article class="job">
+        <div class="row"><h3>Orders Team, Canales Furniture</h3><span class="when">May 2026 – Present</span></div>
+        <p>I manage purchase orders through our ERP system. I also built an application that turns product, salesperson and store performance into visual reports and flags pricing outliers.</p>
+      </article>
+      <article class="job">
+        <div class="row"><h3>Project Associate, Canales Furniture</h3><span class="when">May 2022 – May 2026</span></div>
+        <p>I streamlined a large-scale ERP migration by building an Excel-to-Access pipeline that used SQL to calculate margins, pricing and stock levels across more than 90,000 line items. It reduced manual data entry and was more accurate than the old formula-based process.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <h4>Hardware &amp; Design</h4>
+        <div class="chips"><span class="chip">KiCad</span><span class="chip">PCB Design</span><span class="chip">PCB Soldering</span><span class="chip">LTspice</span><span class="chip">CAD</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Programming</h4>
+        <div class="chips"><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">SQL</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Data &amp; Tools</h4>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">Data Analytics</span><span class="chip">PostgreSQL</span><span class="chip">Microsoft Azure</span><span class="chip">Microsoft Access</span><span class="chip">ERP Systems</span></div>
+      </div>
+    </section>
+
+    <footer>© 2026 Carlos Canales · Member, Society of Hispanic Professional Engineers</footer>
+  </main>
+</body>
+</html>
